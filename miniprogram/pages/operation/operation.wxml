@@ -1,0 +1,19 @@
+<!--pages/operation/operation.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="row">
+      <text>奶茶名称：</text>
+      <input type="text" name="itemName" placeholder="请输入奶茶名称" value="{{itemName}}" />
+    </view>
+    <view class="row">
+      <text>优先级：</text>
+      <input type="number" name="priority" placeholder="数值越大越靠前（不填为0）" value="{{priority}}" />
+    </view>
+    <view class="row">
+      <button type="primary" form-type="submit">提交</button>
+      <button type="primary" form-type="reset">清空</button>
+    </view>
+
+    </form>
+  </view>
+

@@ -1,0 +1,27 @@
+<!--pages/list/list.wxml-->
+<view class="container">
+  <view class="widget">
+    <text class="column">ID</text>
+    <text class="column">商品名称</text>
+    <text class="column">优先级</text>
+    <text class="link-column">操作</text>
+  </view>
+  <scroll-view scroll-y="true">
+    <view>
+      <block wx:for="{{list}}">
+        <view class="widget">
+          <view>
+            <text class="column">{{item.itemId}}</text>
+            <text class="column">{{item.itemName}}</text>
+            <text class="column">{{item.priority}}</text>
+            <view class="link-column">
+              <navigator class="link" url="../operation/operation?itemId={{item.itemId}}">编辑</navigator>|
+              <text class="link" bindtap="deleteItem" data-itemid="{{item.itemId}}" data-itemname="{{item.itemName}}" data-index="{{index}}">删除</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <button type="primary" bindtap="addItem">添加奶茶信息</button>
+</view>
